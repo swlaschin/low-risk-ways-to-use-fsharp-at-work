@@ -20,6 +20,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Development scripts", "2-
 		fake.fsx = fake.fsx
 	EndProjectSection
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SqlInFsharp", "SqlInFsharp\SqlInFsharp.fsproj", "{29DD68BE-B183-49A0-8AF4-D6AA1BB25B63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Other scripts", "5-Other scripts", "{9D7A8196-D2E3-4FAE-9C59-419BEA90D021}"
+	ProjectSection(SolutionItems) = preProject
+		freebase.fsx = freebase.fsx
+		world-bank.fsx = world-bank.fsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +38,10 @@ Global
 		{3D730584-161E-4111-81E7-2474AECDFD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D730584-161E-4111-81E7-2474AECDFD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D730584-161E-4111-81E7-2474AECDFD60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29DD68BE-B183-49A0-8AF4-D6AA1BB25B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DD68BE-B183-49A0-8AF4-D6AA1BB25B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DD68BE-B183-49A0-8AF4-D6AA1BB25B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DD68BE-B183-49A0-8AF4-D6AA1BB25B63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
