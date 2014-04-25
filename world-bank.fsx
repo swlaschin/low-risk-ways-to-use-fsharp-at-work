@@ -81,10 +81,10 @@ let countries =
 // print the data
 |> Seq.iter (
     fun (group,(indName, indYear, indValue)) -> 
-       printfn "%s -- %s %i %0.2f%% " group indName indYear indValue)
+       printfn "%s -- %s %i %0.1f" group indName indYear indValue)
 
 (*
-European Union -- Maternal mortality ratio (modeled estimate, per 100,000 live births) 2010 9.00% 
-United Kingdom -- Maternal mortality ratio (modeled estimate, per 100,000 live births) 2010 12.00% 
-United States -- Maternal mortality ratio (modeled estimate, per 100,000 live births) 2010 21.00% 
+European Union -- Maternal mortality ratio (modeled estimate, per 100,000 live births) 2010 9.0 
+United Kingdom -- Maternal mortality ratio (modeled estimate, per 100,000 live births) 2010 12.0 
+United States -- Maternal mortality ratio (modeled estimate, per 100,000 live births) 2010 21.0 
 *)
