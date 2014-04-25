@@ -60,3 +60,45 @@ data.``Arts and Entertainment``.Film.Films.IndividualsAZ.C.Casablanca.``Awards W
 |> Seq.map (fun award -> award.Year, award.``Award category``.Name)
 |> Seq.sortBy fst
 |> Seq.iter (fun (year,name) -> printfn "%s -- %s" year name)
+
+
+// =================================
+// Generate random data
+//
+// Based on a tweet from Kit Eason
+// http://twitter.com/kitlovesfsharp/status/296240699735695360
+// =================================
+
+
+let randomElement =
+    let random = new System.Random()
+    fun (arr:string array) -> arr.[random.Next(arr.Length)]
+
+let surnames = 
+    FreebaseData.GetDataContext().Society.People.``Family names``
+    |> Seq.truncate 1000
+    |> Seq.map (fun name -> name.Name)
+    |> Array.ofSeq
+            
+let firstnames = 
+    FreebaseData.GetDataContext().Society.Celebrities.Celebrities
+    |> Seq.truncate 1000
+    |> Seq.map (fun celeb -> celeb.Name.Split([|' '|]).[0])
+    |> Array.ofSeq
+
+// generate random people and print
+type Person = {Forename:string; Surname:string}
+Seq.init 100 ( fun _ -> 
+    {Forename = (randomElement firstnames); 
+     Surname = (randomElement surnames) }
+     )
+|> Seq.iter (printfn "%A")
+
+(*
+// generate random people and insert into database
+Seq.init count ( fun _ -> 
+  dbSchema.ServiceTypes.People(
+      Forename = (randomElement firstnames), 
+      Surname = (randomElement surnames))
+|> db.People.InsertAllOnSubmit         
+*)
