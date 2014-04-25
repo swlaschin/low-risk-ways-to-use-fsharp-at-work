@@ -88,7 +88,7 @@ let firstnames =
 
 // generate random people and print
 type Person = {Forename:string; Surname:string}
-Seq.init 100 ( fun _ -> 
+Seq.init 10 ( fun _ -> 
     {Forename = (randomElement firstnames); 
      Surname = (randomElement surnames) }
      )
