@@ -31,7 +31,7 @@ let removeExistingData (db:DbContext) =
         |> db.DataContext.ExecuteCommand 
         |> ignore
 
-    ["Customer"; "CustomerImport"]
+    ["Customer"; "CustomerImport"; "Country"]
     |> List.iter truncateTable
 
 let insertReferenceData (db:DbContext) = 
